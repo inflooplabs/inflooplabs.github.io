@@ -1,87 +1,108 @@
+/*
+    style.css
+    inflooplabs.github.io
+
+    Created by Vihaan on 2026-04-11.
+*/
+
 @font-face {
         font-family: "SF Pro";
-        src: url("fonts/SF-Pro.ttf") format("truetype");
+        src: url("assets/SF-Pro.ttf") format("truetype");
         font-weight: 100 900;
         font-style: normal;
 }
+
 @font-face {
         font-family: "SF Pro";
-        src: url("fonts/SF-Pro-Italic.ttf") format("truetype");
+        src: url("assets/SF-Pro-Italic.ttf") format("truetype");
         font-weight: 100 900;
         font-style: italic;
 }
+
 @font-face {
-        font-family: "SF Pro";
-        src: url("fonts/SF-Mono-Light.otf") format("opentype");
+        font-family: "SF Mono";
+        src: url("assets/SF-Mono-Light.otf") format("opentype");
         font-weight: 300;
         font-style: normal;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-LightItalic.otf") format("opentype");
+        src: url("assets/SF-Mono-LightItalic.otf") format("opentype");
         font-weight: 300;
         font-style: italic;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-Regular.otf") format("opentype");
+        src: url("assets/SF-Mono-Regular.otf") format("opentype");
         font-weight: 400;
         font-style: normal;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-RegularItalic.otf") format("opentype");
+        src: url("assets/SF-Mono-RegularItalic.otf") format("opentype");
         font-weight: 400;
         font-style: italic;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-Medium.otf") format("opentype");
+        src: url("assets/SF-Mono-Medium.otf") format("opentype");
         font-weight: 500;
         font-style: normal;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-MediumItalic.otf") format("opentype");
+        src: url("assets/SF-Mono-MediumItalic.otf") format("opentype");
         font-weight: 500;
         font-style: italic;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-Semibold.otf") format("opentype");
+        src: url("assets/SF-Mono-Semibold.otf") format("opentype");
         font-weight: 600;
         font-style: normal;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-SemiboldItalic.otf") format("opentype");
+        src: url("assets/SF-Mono-SemiboldItalic.otf") format("opentype");
         font-weight: 600;
         font-style: italic;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-Bold.otf") format("opentype");
+        src: url("assets/SF-Mono-Bold.otf") format("opentype");
         font-weight: 700;
         font-style: normal;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-BoldItalic.otf") format("opentype");
+        src: url("assets/SF-Mono-BoldItalic.otf") format("opentype");
         font-weight: 700;
         font-style: italic;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-Heavy.otf") format("opentype");
+        src: url("assets/SF-Mono-Heavy.otf") format("opentype");
         font-weight: 800;
         font-style: normal;
 }
+
 @font-face {
         font-family: "SF Mono";
-        src: url("fonts/SF-Mono-HeavyItalic.otf") format("opentype");
+        src: url("assets/SF-Mono-HeavyItalic.otf") format("opentype");
         font-weight: 800;
         font-style: italic;
 }
+
 :root {
         --bg-color: #ffffff;
         --text-color: #1d1d1f;
@@ -90,13 +111,15 @@
         --secondary-text: #86868b;
         --card-bg: #f5f5f7;
         --border-radius: 20px;
-        --ai-glow: linear-gradient(135deg, #a2d9ff 0%, #ffafbd 100%);
+        --ai-glow: linear-gradient(135deg, #0091ff 0%, #db34f2 100%);
 }
+
 * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
 }
+
 body {
         font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         background-color: var(--bg-color);
@@ -104,6 +127,7 @@ body {
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
 }
+
 body.dark {
         --bg-color: #000000;
         --text-color: #ffffff;
@@ -111,14 +135,17 @@ body.dark {
         --card-bg: #1d1d1f;
         --secondary-text: #86868b;
 }
+
 a {
         text-decoration: none;
         color: inherit;
         transition: opacity 0.3s ease;
 }
+
 a:hover {
         opacity: 0.7;
 }
+
 nav {
         position: fixed;
         top: 0;
@@ -133,9 +160,11 @@ nav {
         align-items: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 body.dark nav {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .nav-content {
         width: 100%;
         max-width: 1000px;
@@ -146,11 +175,13 @@ body.dark nav {
         font-weight: 400;
         letter-spacing: -0.01em;
 }
+
 .nav-links {
         display: flex;
         gap: 30px;
 }
-.hero {
+
+.banner {
         padding-top: 120px;
         padding-bottom: 40px;
         text-align: center;
@@ -158,6 +189,7 @@ body.dark nav {
         flex-direction: column;
         align-items: center;
 }
+
 .app-icon {
         width: 100px;
         height: 100px;
@@ -165,23 +197,27 @@ body.dark nav {
         margin-bottom: 20px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.hero h1 {
+
+.banner h1 {
         font-size: 56px;
         font-weight: 600;
         letter-spacing: -0.005em;
 }
-.hero p {
+
+.banner p {
         font-size: 24px;
         font-weight: 400;
         color: var(--text-color);
         margin-top: 10px;
 }
+
 .button-group {
         display: flex;
         gap: 12px;
         justify-content: center;
         align-items: center;
 }
+
 .cta-button {
         background-color: var(--accent-color);
         color: white;
@@ -193,12 +229,14 @@ body.dark nav {
         text-align: center;
         display: inline-block;
 }
+
 .cta-button-secondary {
         background-color: transparent;
         color: var(--accent-color);
         border: 1px solid var(--accent-color);
 }
-.product-hero {
+
+.product-banner {
         background-color: #000000;
         color: #ffffff;
         padding: 80px 0;
@@ -208,27 +246,32 @@ body.dark nav {
         flex-direction: column;
         align-items: center;
 }
-.product-hero h2 {
+
+.product-banner h2 {
         font-size: 48px;
         font-weight: 600;
         margin-bottom: 10px;
 }
-.product-hero p {
+
+.product-banner p {
         font-size: 24px;
         color: #f5f5f7;
         margin-bottom: 20px;
 }
-.product-hero .app-icon {
+
+.product-banner .app-icon {
         width: 120px;
         height: 120px;
         box-shadow: none;
 }
+
 .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 40px;
 }
-.bento-grid {
+
+.card-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-auto-rows: 300px;
@@ -236,7 +279,8 @@ body.dark nav {
         margin-top: 20px;
         margin-bottom: 80px;
 }
-.bento-card {
+
+.card {
         background-color: var(--card-bg);
         border-radius: var(--border-radius);
         padding: 40px;
@@ -246,34 +290,43 @@ body.dark nav {
         overflow: hidden;
         position: relative;
 }
+
 .card-title {
         font-size: 28px;
         font-weight: 600;
         margin-bottom: 8px;
 }
+
 .card-subtitle {
         font-size: 17px;
         color: var(--secondary-text);
 }
+
 .col-12 {
         grid-column: span 12;
 }
+
 .col-8 {
         grid-column: span 8;
 }
+
 .col-6 {
         grid-column: span 6;
 }
+
 .col-4 {
         grid-column: span 4;
 }
+
 .ai-card {
         background: var(--ai-glow);
         color: #1d1d1f;
 }
+
 .ai-card .card-subtitle {
         color: rgba(29, 29, 31, 0.7);
 }
+
 footer {
         padding: 40px 0;
         background-color: var(--card-bg);
@@ -281,21 +334,23 @@ footer {
         font-size: 12px;
         color: var(--secondary-text);
 }
+
 footer .links {
         margin-bottom: 20px;
         display: flex;
         justify-content: center;
         gap: 20px;
 }
+
 @media (max-width: 768px) {
-        .bento-grid {
+        .card-grid {
                 grid-template-columns: 1fr;
                 grid-auto-rows: auto;
         }
         .col-4, .col-6, .col-8, .col-12 {
                 grid-column: span 1;
         }
-        .hero h1 {
+        .banner h1 {
                 font-size: 40px;
         }
 }

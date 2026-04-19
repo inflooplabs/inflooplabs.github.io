@@ -26,7 +26,7 @@ To build and run the project:
 * **Language:** The project is written in HTML, CSS, and JS.
 * **UI:** The user interface is built with HTML.
 * **Data Persistence:** No data is stored anywhere.
-* **Coding Style:** The code follows standard HTML conventions, including `PascalCase` for types and `camelCase` for functions and variables. In addition, indents are 8 spaces, there are no comments, there are no double newlines, it should be written `}\nelse {` instead of `} else {`, and all braces should be expanded - meaning no `{ number == 0 }`, it should be `{\n        number == 0\n}`.
+* **Coding Style:** The code follows standard HTML conventions, including `PascalCase` for types and `camelCase` for functions and variables. In addition, indents are 8 spaces, there are no comments, there are no double newlines (except between top-level objects in CSS/JS), it should be written `}\nelse {` instead of `} else {`, and all braces should be expanded - meaning no `{ number == 0 }`, it should be `{\n        number == 0\n}`. All top-level objects must be in alphabetical order within the file.
 
 ## Key Files
 

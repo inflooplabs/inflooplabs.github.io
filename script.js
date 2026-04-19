@@ -1,6 +1,13 @@
+/*
+    script.js
+    inflooplabs.github.io
+
+    Created by Vihaan on 2026-04-11.
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
-        const nav = document.querySelector("nav");
         const isDark = document.body.classList.contains("dark");
+        const nav = document.querySelector("nav");
         window.addEventListener("scroll", () => {
                 if (window.scrollY > 50) {
                         if (isDark) {
