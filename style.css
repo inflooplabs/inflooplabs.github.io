@@ -1,108 +1,93 @@
 /*
-    style.css
-    inflooplabs.github.io
+        style.css
+        inflooplabs.github.io
 
-    Created by Vihaan on 2026-04-11.
+        Created by Vihaan on 2026-04-11.
 */
-
 @font-face {
         font-family: "SF Pro";
         src: url("assets/SF-Pro.ttf") format("truetype");
         font-weight: 100 900;
         font-style: normal;
 }
-
 @font-face {
         font-family: "SF Pro";
         src: url("assets/SF-Pro-Italic.ttf") format("truetype");
         font-weight: 100 900;
         font-style: italic;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-Light.otf") format("opentype");
         font-weight: 300;
         font-style: normal;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-LightItalic.otf") format("opentype");
         font-weight: 300;
         font-style: italic;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-Regular.otf") format("opentype");
         font-weight: 400;
         font-style: normal;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-RegularItalic.otf") format("opentype");
         font-weight: 400;
         font-style: italic;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-Medium.otf") format("opentype");
         font-weight: 500;
         font-style: normal;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-MediumItalic.otf") format("opentype");
         font-weight: 500;
         font-style: italic;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-Semibold.otf") format("opentype");
         font-weight: 600;
         font-style: normal;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-SemiboldItalic.otf") format("opentype");
         font-weight: 600;
         font-style: italic;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-Bold.otf") format("opentype");
         font-weight: 700;
         font-style: normal;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-BoldItalic.otf") format("opentype");
         font-weight: 700;
         font-style: italic;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-Heavy.otf") format("opentype");
         font-weight: 800;
         font-style: normal;
 }
-
 @font-face {
         font-family: "SF Mono";
         src: url("assets/SF-Mono-HeavyItalic.otf") format("opentype");
         font-weight: 800;
         font-style: italic;
 }
-
 :root {
         --bg-color: #ffffff;
         --text-color: #1d1d1f;
@@ -113,13 +98,20 @@
         --border-radius: 20px;
         --ai-glow: linear-gradient(135deg, #0091ff 0%, #db34f2 100%);
 }
-
+@media (prefers-color-scheme: dark) {
+        :root {
+                --bg-color: #000000;
+                --text-color: #ffffff;
+                --nav-bg: rgba(0, 0, 0, 0.8);
+                --card-bg: #1d1d1f;
+                --secondary-text: #86868b;
+        }
+}
 * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
 }
-
 body {
         font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         background-color: var(--bg-color);
@@ -127,25 +119,14 @@ body {
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
 }
-
-body.dark {
-        --bg-color: #000000;
-        --text-color: #ffffff;
-        --nav-bg: rgba(0, 0, 0, 0.8);
-        --card-bg: #1d1d1f;
-        --secondary-text: #86868b;
-}
-
 a {
         text-decoration: none;
         color: inherit;
         transition: opacity 0.3s ease;
 }
-
 a:hover {
         opacity: 0.7;
 }
-
 nav {
         position: fixed;
         top: 0;
@@ -160,27 +141,61 @@ nav {
         align-items: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-body.dark nav {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+@media (prefers-color-scheme: dark) {
+        nav {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 }
-
 .nav-content {
         width: 100%;
         max-width: 1000px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 0 20px;
         font-size: 12px;
         font-weight: 400;
         letter-spacing: -0.01em;
 }
-
+@media (min-width: 1200px) {
+        .nav-content {
+                max-width: 1200px;
+                padding: 0 40px;
+        }
+}
+.logo {
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+}
+.logo-mobile {
+        display: none;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+}
+.mobile-menu-button {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        z-index: 1001;
+}
+.mobile-menu-button span {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: var(--text-color);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .nav-links {
         display: flex;
         gap: 30px;
 }
-
 .banner {
         padding-top: 120px;
         padding-bottom: 40px;
@@ -189,7 +204,6 @@ body.dark nav {
         flex-direction: column;
         align-items: center;
 }
-
 .app-icon {
         width: 100px;
         height: 100px;
@@ -197,27 +211,24 @@ body.dark nav {
         margin-bottom: 20px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .banner h1 {
         font-size: 56px;
         font-weight: 600;
         letter-spacing: -0.005em;
 }
-
 .banner p {
         font-size: 24px;
         font-weight: 400;
         color: var(--text-color);
         margin-top: 10px;
 }
-
 .button-group {
         display: flex;
         gap: 12px;
         justify-content: center;
         align-items: center;
+        margin-top: 20px;
 }
-
 .cta-button {
         background-color: var(--accent-color);
         color: white;
@@ -229,48 +240,46 @@ body.dark nav {
         text-align: center;
         display: inline-block;
 }
-
 .cta-button-secondary {
         background-color: transparent;
         color: var(--accent-color);
         border: 1px solid var(--accent-color);
 }
-
 .product-banner {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 80px 0;
+        padding: 40px 0;
         text-align: center;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+@media (prefers-color-scheme: dark) {
+        .product-banner {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+}
 .product-banner h2 {
         font-size: 48px;
         font-weight: 600;
         margin-bottom: 10px;
 }
-
 .product-banner p {
         font-size: 24px;
-        color: #f5f5f7;
         margin-bottom: 20px;
 }
-
 .product-banner .app-icon {
         width: 120px;
         height: 120px;
-        box-shadow: none;
+        border-radius: 22.5%;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 40px;
 }
-
 .card-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -279,7 +288,6 @@ body.dark nav {
         margin-top: 20px;
         margin-bottom: 80px;
 }
-
 .card {
         background-color: var(--card-bg);
         border-radius: var(--border-radius);
@@ -290,43 +298,34 @@ body.dark nav {
         overflow: hidden;
         position: relative;
 }
-
 .card-title {
         font-size: 28px;
         font-weight: 600;
         margin-bottom: 8px;
 }
-
 .card-subtitle {
         font-size: 17px;
         color: var(--secondary-text);
 }
-
 .col-12 {
         grid-column: span 12;
 }
-
 .col-8 {
         grid-column: span 8;
 }
-
 .col-6 {
         grid-column: span 6;
 }
-
 .col-4 {
         grid-column: span 4;
 }
-
 .ai-card {
         background: var(--ai-glow);
         color: #1d1d1f;
 }
-
 .ai-card .card-subtitle {
         color: rgba(29, 29, 31, 0.7);
 }
-
 footer {
         padding: 40px 0;
         background-color: var(--card-bg);
@@ -334,15 +333,60 @@ footer {
         font-size: 12px;
         color: var(--secondary-text);
 }
-
 footer .links {
         margin-bottom: 20px;
         display: flex;
         justify-content: center;
         gap: 20px;
 }
-
 @media (max-width: 768px) {
+        .logo-desktop {
+                display: none;
+        }
+        .logo-mobile {
+                display: inline;
+        }
+        .mobile-menu-button {
+                display: flex;
+        }
+        .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 60px 40px;
+                gap: 25px;
+                font-size: 28px;
+                font-weight: 600;
+                z-index: 1000;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+        }
+        .nav-links.active {
+                display: flex;
+                opacity: 1;
+        }
+        .nav-links a {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                padding-bottom: 10px;
+                width: 100%;
+        }
+        @media (prefers-color-scheme: dark) {
+                .nav-links a {
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                }
+        }
+        .mobile-menu-button.active span:nth-child(1) {
+                transform: translateY(2.5px) rotate(45deg);
+        }
+        .mobile-menu-button.active span:nth-child(2) {
+                transform: translateY(-2.5px) rotate(-45deg);
+        }
         .card-grid {
                 grid-template-columns: 1fr;
                 grid-auto-rows: auto;
